@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/IA01---Gomoku/static/css/main.b9e35382.css",
+    "main.js": "/IA01---Gomoku/static/js/main.e9a222c1.js",
+    "static/js/787.cdc7fe88.chunk.js": "/IA01---Gomoku/static/js/787.cdc7fe88.chunk.js",
+    "index.html": "/IA01---Gomoku/index.html",
+    "main.b9e35382.css.map": "/IA01---Gomoku/static/css/main.b9e35382.css.map",
+    "main.e9a222c1.js.map": "/IA01---Gomoku/static/js/main.e9a222c1.js.map",
+    "787.cdc7fe88.chunk.js.map": "/IA01---Gomoku/static/js/787.cdc7fe88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9e35382.css",
+    "static/js/main.e9a222c1.js"
+  ]
+}
