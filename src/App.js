@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 
 function Square(props) {
-  const className = 'square' + (props.highlight ? ' highlight' : '');
+  const className = 'square' + (props.isInWinline ? ' win' : '');
   if(props.isActive){
     return (
       <button
@@ -33,19 +33,18 @@ class Board extends React.Component {
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
         isActive ={winLine? false:true}
-        highlight={winLine && winLine.includes(i)}
+        isInWinline={winLine && winLine.includes(i)}
       />
     );
   }
 
   render() {
-    // Use two loops to make the squares
-    const boardSize = this.props.size;//this.size;
+    const size = this.props.size;//this.size;
     let squares = [];
-    for (let i = 0; i < boardSize; ++i) {
+    for (let i = 0; i < size; ++i) {
       let row = [];
-      for (let j = 0; j < boardSize; ++j) {
-        row.push(this.renderSquare(i * boardSize + j));
+      for (let j = 0; j < size; ++j) {
+        row.push(this.renderSquare(i * size + j));
       }
       squares.push(<div key={i} className="board-row">{row}</div>);
     }
@@ -68,7 +67,7 @@ class App extends React.Component {
       stepNumber: 0,
       xIsNext: true,
       isAscending: true,
-      size:10
+      size:5
     };
   }
   
@@ -85,7 +84,6 @@ class App extends React.Component {
       history: history.concat([
         {
           squares: squares,
-          // Store the index of the latest moved square
           latestMoveSquare: i
         }
       ]),
@@ -145,7 +143,6 @@ class App extends React.Component {
         'Go to game start';
       return (
         <li key={move}>
-          {/* Bold the currently selected item */ }
           <button
             className={move === stepNumber ? 'move-list-item-selected' : ''}
             onClick={() => this.jumpTo(move)}>{desc}
@@ -196,6 +193,33 @@ class App extends React.Component {
             {isAscending ? 'descending' : 'ascending'}
           </button>
           <ol>{moves}</ol>
+        </div>
+        <div className="Info">
+        <p>
+          Display the location for each move in the format (col, row) in the move history list. 1,5
+        </p>
+        <p>
+          Bold the currently selected item in the move list. 1,5
+        </p>
+        <p>
+          Rewrite Board to use two loops to make the squares instead of hardcoding them. Rewrite the winning rule to 5 consecutive squares. 1,5
+        </p>
+        <p>
+          Add a toggle button that lets you sort the moves in either ascending or descending order. 1,5
+        </p>
+        <p>
+          When someone wins, highlight the three squares that caused the win. 1,5
+        </p>
+        <p>
+          When no one wins, display a message about the result being a draw. 1,5
+        </p>
+        <p>
+          Host your website on public hosting: 1 
+        </p>
+
+        <p>
+          Có tham khảo code của bài giảng tuần trước và code thêm vào
+        </p>
         </div>
       </div>
     );

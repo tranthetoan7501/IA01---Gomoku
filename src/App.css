@@ -19,7 +19,7 @@ ol, ul {
 
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px solid rgb(17, 155, 214);
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -32,8 +32,8 @@ ol, ul {
   width: 34px;
 }
 
-.square.highlight {
-  background: #ddd
+.square.win {
+  background: rgb(40, 157, 231)
 }
 
 .square:focus {
@@ -59,4 +59,8 @@ ol, ul {
 }
 .input_size{
   margin-bottom: 4%;
+}
+
+.Info{
+  padding-top: 5%;
 }
